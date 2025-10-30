@@ -4,8 +4,12 @@ import com.google.gwt.dom.client.Element;/*DONT TOUCH ME*/
 import com.google.gwt.core.client.ScriptInjector;
 import com.google.gwt.dom.client.*;
 import com.google.gwt.user.client.ui.Widget;
- 
+
 public class TGC_JSUtils {
+
+    public static native String removeEmoji(String text) /*-{
+        return text.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '');
+}-*/;
 
     public static native NodeList<Element> querySelectorAll(String tag_dot_className) /*-{
         return $doc.querySelectorAll(tag_dot_className)
